@@ -27,13 +27,13 @@ def send_img(msg):
 @bot.callback_query_handler(func=lambda call: call.data == IMG_BTNS[1][1])
 def link(call:telebot.types.CallbackQuery):
     msg = call.message
-    bot.edit_message_text("Отправьте ссылку", msg.chat.id,msg.id)
+    bot.edit_message_text("Отправьте ссылку mr.Garnik", msg.chat.id,msg.id)
     bot.register_next_step_handler(msg, send_img)
 
 @bot.callback_query_handler(func=lambda call: call.data == IMG_BTNS[0][1])
 def link(call:telebot.types.CallbackQuery):
     msg = call.message
-    bot.edit_message_text("Отправьте запрос", msg.chat.id,msg.id)
+    bot.edit_message_text("Отправьте запрос mr.Garnik", msg.chat.id,msg.id)
     bot.register_next_step_handler(msg, gen_img)
 @bot.callback_query_handler(func=lambda call: call.data == START_BTNS[0][1])
 def image_btn(call:telebot.types.CallbackQuery):
@@ -41,7 +41,7 @@ def image_btn(call:telebot.types.CallbackQuery):
     keyboard = telebot.types.InlineKeyboardMarkup()
     buttons = [telebot.types.InlineKeyboardButton(text=text, callback_data=callback_data) for text, callback_data in IMG_BTNS]
     keyboard.add(*buttons)
-    bot.edit_message_text("Работа с изображением", msg.chat.id,msg.id,reply_markup=keyboard)
+    bot.edit_message_text("Работа с изображением mr.Garnik", msg.chat.id,msg.id,reply_markup=keyboard)
 
 #============================================================================audio
 def download_audio(anime_title):
